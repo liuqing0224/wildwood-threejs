@@ -37,5 +37,6 @@ next-env.d.ts
 /outputs/
 /work/
 /artifacts/*.png
+/artifacts/*.tar.gz
 /*-check.png
 *.tsbuildinfo
