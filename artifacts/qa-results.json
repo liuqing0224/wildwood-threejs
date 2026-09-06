@@ -1,0 +1,53 @@
+{
+  "results": [
+    {
+      "name": "desktop",
+      "colors": 201,
+      "overflow": false,
+      "outside": [],
+      "home": {
+        "x": 723.3342852119811,
+        "y": 497.70593203912796
+      },
+      "motion": true,
+      "weather": {
+        "rain": true,
+        "weather": "storm",
+        "hour": 22.05600000000002
+      }
+    },
+    {
+      "name": "mobile",
+      "colors": 160,
+      "overflow": false,
+      "outside": [],
+      "home": {
+        "x": 199.95543289903026,
+        "y": 437.1401265591736
+      },
+      "motion": true,
+      "weather": {
+        "rain": true,
+        "weather": "storm",
+        "hour": 22.05600000000002
+      }
+    },
+    {
+      "name": "small-mobile",
+      "colors": 145,
+      "overflow": false,
+      "outside": [],
+      "home": {
+        "x": 184.34481083564262,
+        "y": 383.27451854714275
+      },
+      "motion": true,
+      "weather": {
+        "rain": true,
+        "weather": "storm",
+        "hour": 22.05600000000002
+      }
+    }
+  ],
+  "errors": []
+}
