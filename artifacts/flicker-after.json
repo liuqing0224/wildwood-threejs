@@ -1,0 +1,44 @@
+{
+  "baseline": false,
+  "results": [
+    {
+      "name": "desktop",
+      "initialNavigations": 4,
+      "reloadsDuringSampling": 0,
+      "defeat": {
+        "hourUnchanged": true,
+        "messages": 0,
+        "paused": true
+      },
+      "sunMin": 0.44674176587537134,
+      "sunMax": 0.44674179744612713,
+      "maxSunStep": 3.0043546539459953e-9,
+      "maxAmbientStep": 1.327024712338698e-9,
+      "canvasColors": 130,
+      "canvasCount": 1,
+      "rainVisible": true,
+      "weather": "storm",
+      "canvasWidth": 1200
+    },
+    {
+      "name": "mobile",
+      "initialNavigations": 4,
+      "reloadsDuringSampling": 0,
+      "defeat": {
+        "hourUnchanged": true,
+        "messages": 0,
+        "paused": true
+      },
+      "sunMin": 0.4467369667489124,
+      "sunMax": 0.44673699566912234,
+      "maxSunStep": 2.752121863736079e-9,
+      "maxAmbientStep": 1.2162248985703172e-9,
+      "canvasColors": 130,
+      "canvasCount": 1,
+      "rainVisible": true,
+      "weather": "storm",
+      "canvasWidth": 390
+    }
+  ],
+  "errors": []
+}

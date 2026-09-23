@@ -1,0 +1,19 @@
+{
+  "baseline": true,
+  "results": [
+    {
+      "name": "desktop",
+      "navigations": 4,
+      "sunMin": 0.4468425875249711,
+      "sunMax": 7,
+      "maxSunStep": 6.553157412475029,
+      "maxAmbientStep": 0,
+      "canvasColors": 130,
+      "canvasCount": 1,
+      "rainVisible": true,
+      "weather": "storm",
+      "canvasWidth": 1200
+    }
+  ],
+  "errors": []
+}

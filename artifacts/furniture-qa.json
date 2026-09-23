@@ -1,0 +1,1157 @@
+{
+  "results": [
+    {
+      "name": "desktop",
+      "gathered": {
+        "wood": 96,
+        "fiber": 24,
+        "harvested": 4,
+        "repeat": false
+      },
+      "crafted": {
+        "wood": 312,
+        "stone": 120,
+        "fiber": 12,
+        "stock": 1,
+        "crafted": 1
+      },
+      "placed": {
+        "block": {
+          "kind": "bed",
+          "x": -1,
+          "z": -1,
+          "rotation": 1.5707963267948966,
+          "hp": 100,
+          "id": 85
+        },
+        "stock": 0,
+        "wood": 312,
+        "fiber": 12,
+        "meshRotation": 1.5707963267948966,
+        "roofsHidden": true
+      },
+      "door": {
+        "error": "这里是门内通道，请留出进出空间",
+        "built": false,
+        "stock": 1,
+        "noFloor": "家具需要放在木地板上"
+      },
+      "packed": {
+        "stock": 1,
+        "bed": false,
+        "wood": 304
+      },
+      "rest": {
+        "comfort": 47,
+        "kinds": [
+          "chair",
+          "rug",
+          "bed",
+          "table",
+          "chest",
+          "lamp"
+        ]
+      },
+      "restored": {
+        "stock": {
+          "bed": 0,
+          "table": 0,
+          "chair": 0,
+          "chest": 0,
+          "lamp": 0,
+          "rug": 0
+        },
+        "fiber": 6,
+        "crafted": 6,
+        "bed": {
+          "kind": "bed",
+          "x": -1,
+          "z": -1,
+          "rotation": 6.265732014659642,
+          "hp": 100,
+          "id": 88
+        }
+      },
+      "visuals": {
+        "colors": 203,
+        "modelPixels": {
+          "chair": 43,
+          "rug": 12,
+          "bed": 41,
+          "table": 99,
+          "chest": 80,
+          "lamp": 54
+        },
+        "overflow": false,
+        "bounds": [
+          {
+            "label": "left-hud",
+            "x": 34,
+            "y": 136,
+            "width": 246,
+            "height": 511.5,
+            "top": 136,
+            "right": 280,
+            "bottom": 647.5,
+            "left": 34
+          },
+          {
+            "label": "right-hud",
+            "x": 1202,
+            "y": 136,
+            "width": 206,
+            "height": 375.5,
+            "top": 136,
+            "right": 1408,
+            "bottom": 511.5,
+            "left": 1202
+          },
+          {
+            "label": "selection-info",
+            "x": 424.8125,
+            "y": 696,
+            "width": 590.359375,
+            "height": 72,
+            "top": 696,
+            "right": 1015.171875,
+            "bottom": 768,
+            "left": 424.8125
+          },
+          {
+            "label": "furniture-recipe",
+            "x": 638.8125,
+            "y": 708,
+            "width": 160.359375,
+            "height": 48,
+            "top": 708,
+            "right": 799.171875,
+            "bottom": 756,
+            "left": 638.8125
+          },
+          {
+            "label": "制作木床",
+            "x": 735.171875,
+            "y": 728,
+            "width": 64,
+            "height": 28,
+            "top": 728,
+            "right": 799.171875,
+            "bottom": 756,
+            "left": 735.171875
+          },
+          {
+            "label": "横向放置",
+            "x": 809.171875,
+            "y": 707,
+            "width": 29,
+            "height": 29,
+            "top": 707,
+            "right": 838.171875,
+            "bottom": 736,
+            "left": 809.171875
+          },
+          {
+            "label": "纵向放置",
+            "x": 841.171875,
+            "y": 707,
+            "width": 29,
+            "height": 29,
+            "top": 707,
+            "right": 870.171875,
+            "bottom": 736,
+            "left": 841.171875
+          },
+          {
+            "label": "转到背面",
+            "x": 873.171875,
+            "y": 707,
+            "width": 29,
+            "height": 29,
+            "top": 707,
+            "right": 902.171875,
+            "bottom": 736,
+            "left": 873.171875
+          },
+          {
+            "label": "旋转角度",
+            "x": 905.171875,
+            "y": 707,
+            "width": 51,
+            "height": 29,
+            "top": 707,
+            "right": 956.171875,
+            "bottom": 736,
+            "left": 905.171875
+          },
+          {
+            "label": "旋转已建部件",
+            "x": 969.171875,
+            "y": 707,
+            "width": 29,
+            "height": 29,
+            "top": 707,
+            "right": 998.171875,
+            "bottom": 736,
+            "left": 969.171875
+          },
+          {
+            "label": "自由旋转",
+            "x": 809.171875,
+            "y": 739,
+            "width": 190,
+            "height": 18,
+            "top": 739,
+            "right": 999.171875,
+            "bottom": 757,
+            "left": 809.171875
+          },
+          {
+            "label": "建造",
+            "x": 390,
+            "y": 812,
+            "width": 34,
+            "height": 34,
+            "top": 812,
+            "right": 424,
+            "bottom": 846,
+            "left": 390
+          },
+          {
+            "label": "采集",
+            "x": 429,
+            "y": 812,
+            "width": 34,
+            "height": 34,
+            "top": 812,
+            "right": 463,
+            "bottom": 846,
+            "left": 429
+          },
+          {
+            "label": "修理",
+            "x": 390,
+            "y": 851,
+            "width": 34,
+            "height": 34,
+            "top": 851,
+            "right": 424,
+            "bottom": 885,
+            "left": 390
+          },
+          {
+            "label": "拆除",
+            "x": 429,
+            "y": 851,
+            "width": 34,
+            "height": 34,
+            "top": 851,
+            "right": 463,
+            "bottom": 885,
+            "left": 429
+          },
+          {
+            "label": "",
+            "x": 488,
+            "y": 791,
+            "width": 59,
+            "height": 27,
+            "top": 791,
+            "right": 547,
+            "bottom": 818,
+            "left": 488
+          },
+          {
+            "label": "",
+            "x": 550,
+            "y": 791,
+            "width": 59,
+            "height": 27,
+            "top": 791,
+            "right": 609,
+            "bottom": 818,
+            "left": 550
+          },
+          {
+            "label": "查看室内",
+            "x": 963,
+            "y": 791,
+            "width": 28,
+            "height": 27,
+            "top": 791,
+            "right": 991,
+            "bottom": 818,
+            "left": 963
+          },
+          {
+            "label": "选择木床",
+            "x": 488,
+            "y": 825,
+            "width": 78,
+            "height": 81,
+            "top": 825,
+            "right": 566,
+            "bottom": 906,
+            "left": 488
+          },
+          {
+            "label": "选择木桌",
+            "x": 573,
+            "y": 825,
+            "width": 78,
+            "height": 81,
+            "top": 825,
+            "right": 651,
+            "bottom": 906,
+            "left": 573
+          },
+          {
+            "label": "选择木椅",
+            "x": 658,
+            "y": 825,
+            "width": 78,
+            "height": 81,
+            "top": 825,
+            "right": 736,
+            "bottom": 906,
+            "left": 658
+          },
+          {
+            "label": "选择木箱",
+            "x": 743,
+            "y": 825,
+            "width": 78,
+            "height": 81,
+            "top": 825,
+            "right": 821,
+            "bottom": 906,
+            "left": 743
+          },
+          {
+            "label": "选择落地灯",
+            "x": 828,
+            "y": 825,
+            "width": 78,
+            "height": 81,
+            "top": 825,
+            "right": 906,
+            "bottom": 906,
+            "left": 828
+          },
+          {
+            "label": "选择编织地毯",
+            "x": 913,
+            "y": 825,
+            "width": 78,
+            "height": 81,
+            "top": 825,
+            "right": 991,
+            "bottom": 906,
+            "left": 913
+          },
+          {
+            "label": "旋转部件",
+            "x": 1016,
+            "y": 812,
+            "width": 34,
+            "height": 34,
+            "top": 812,
+            "right": 1050,
+            "bottom": 846,
+            "left": 1016
+          },
+          {
+            "label": "显示网格",
+            "x": 1016,
+            "y": 851,
+            "width": 34,
+            "height": 34,
+            "top": 851,
+            "right": 1050,
+            "bottom": 885,
+            "left": 1016
+          },
+          {
+            "label": "开启音效",
+            "x": 1135,
+            "y": 929,
+            "width": 15,
+            "height": 15,
+            "top": 929,
+            "right": 1150,
+            "bottom": 944,
+            "left": 1135
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile",
+      "gathered": {
+        "wood": 96,
+        "fiber": 24,
+        "harvested": 4,
+        "repeat": false
+      },
+      "crafted": {
+        "wood": 312,
+        "stone": 120,
+        "fiber": 12,
+        "stock": 1,
+        "crafted": 1
+      },
+      "placed": {
+        "block": {
+          "kind": "bed",
+          "x": -1,
+          "z": -1,
+          "rotation": 1.5707963267948966,
+          "hp": 100,
+          "id": 85
+        },
+        "stock": 0,
+        "wood": 312,
+        "fiber": 12,
+        "meshRotation": 1.5707963267948966,
+        "roofsHidden": true
+      },
+      "door": {
+        "error": "这里是门内通道，请留出进出空间",
+        "built": false,
+        "stock": 1,
+        "noFloor": "家具需要放在木地板上"
+      },
+      "packed": {
+        "stock": 1,
+        "bed": false,
+        "wood": 304
+      },
+      "rest": {
+        "comfort": 47,
+        "kinds": [
+          "chair",
+          "rug",
+          "bed",
+          "table",
+          "chest",
+          "lamp"
+        ]
+      },
+      "restored": {
+        "stock": {
+          "bed": 0,
+          "table": 0,
+          "chair": 0,
+          "chest": 0,
+          "lamp": 0,
+          "rug": 0
+        },
+        "fiber": 6,
+        "crafted": 6,
+        "bed": {
+          "kind": "bed",
+          "x": -1,
+          "z": -1,
+          "rotation": 6.265732014659642,
+          "hp": 100,
+          "id": 88
+        }
+      },
+      "visuals": {
+        "colors": 209,
+        "modelPixels": {
+          "chair": 81,
+          "rug": 23,
+          "bed": 78,
+          "table": 151,
+          "chest": 123,
+          "lamp": 96
+        },
+        "overflow": false,
+        "bounds": [
+          {
+            "label": "left-hud",
+            "x": 15,
+            "y": 134,
+            "width": 190,
+            "height": 97,
+            "top": 134,
+            "right": 205,
+            "bottom": 231,
+            "left": 15
+          },
+          {
+            "label": "right-hud",
+            "x": 236,
+            "y": 133,
+            "width": 140,
+            "height": 239,
+            "top": 133,
+            "right": 376,
+            "bottom": 372,
+            "left": 236
+          },
+          {
+            "label": "selection-info",
+            "x": 10,
+            "y": 509,
+            "width": 370,
+            "height": 145,
+            "top": 509,
+            "right": 380,
+            "bottom": 654,
+            "left": 10
+          },
+          {
+            "label": "furniture-recipe",
+            "x": 21,
+            "y": 540,
+            "width": 348,
+            "height": 48,
+            "top": 540,
+            "right": 369,
+            "bottom": 588,
+            "left": 21
+          },
+          {
+            "label": "制作木床",
+            "x": 305,
+            "y": 560,
+            "width": 64,
+            "height": 28,
+            "top": 560,
+            "right": 369,
+            "bottom": 588,
+            "left": 305
+          },
+          {
+            "label": "横向放置",
+            "x": 21,
+            "y": 595,
+            "width": 29,
+            "height": 29,
+            "top": 595,
+            "right": 50,
+            "bottom": 624,
+            "left": 21
+          },
+          {
+            "label": "纵向放置",
+            "x": 53,
+            "y": 595,
+            "width": 29,
+            "height": 29,
+            "top": 595,
+            "right": 82,
+            "bottom": 624,
+            "left": 53
+          },
+          {
+            "label": "转到背面",
+            "x": 85,
+            "y": 595,
+            "width": 29,
+            "height": 29,
+            "top": 595,
+            "right": 114,
+            "bottom": 624,
+            "left": 85
+          },
+          {
+            "label": "旋转角度",
+            "x": 117,
+            "y": 595,
+            "width": 51,
+            "height": 29,
+            "top": 595,
+            "right": 168,
+            "bottom": 624,
+            "left": 117
+          },
+          {
+            "label": "旋转已建部件",
+            "x": 181,
+            "y": 595,
+            "width": 29,
+            "height": 29,
+            "top": 595,
+            "right": 210,
+            "bottom": 624,
+            "left": 181
+          },
+          {
+            "label": "自由旋转",
+            "x": 21,
+            "y": 627,
+            "width": 190,
+            "height": 18,
+            "top": 627,
+            "right": 211,
+            "bottom": 645,
+            "left": 21
+          },
+          {
+            "label": "建造",
+            "x": 79,
+            "y": 776,
+            "width": 30,
+            "height": 27,
+            "top": 776,
+            "right": 109,
+            "bottom": 803,
+            "left": 79
+          },
+          {
+            "label": "采集",
+            "x": 121,
+            "y": 776,
+            "width": 30,
+            "height": 27,
+            "top": 776,
+            "right": 151,
+            "bottom": 803,
+            "left": 121
+          },
+          {
+            "label": "修理",
+            "x": 163,
+            "y": 776,
+            "width": 30,
+            "height": 27,
+            "top": 776,
+            "right": 193,
+            "bottom": 803,
+            "left": 163
+          },
+          {
+            "label": "拆除",
+            "x": 205,
+            "y": 776,
+            "width": 30,
+            "height": 27,
+            "top": 776,
+            "right": 235,
+            "bottom": 803,
+            "left": 205
+          },
+          {
+            "label": "",
+            "x": 18,
+            "y": 670,
+            "width": 59,
+            "height": 27,
+            "top": 670,
+            "right": 77,
+            "bottom": 697,
+            "left": 18
+          },
+          {
+            "label": "",
+            "x": 80,
+            "y": 670,
+            "width": 59,
+            "height": 27,
+            "top": 670,
+            "right": 139,
+            "bottom": 697,
+            "left": 80
+          },
+          {
+            "label": "查看室内",
+            "x": 344,
+            "y": 670,
+            "width": 28,
+            "height": 27,
+            "top": 670,
+            "right": 372,
+            "bottom": 697,
+            "left": 344
+          },
+          {
+            "label": "选择木床",
+            "x": 18,
+            "y": 704,
+            "width": 56.5,
+            "height": 66,
+            "top": 704,
+            "right": 74.5,
+            "bottom": 770,
+            "left": 18
+          },
+          {
+            "label": "选择木桌",
+            "x": 79.5,
+            "y": 704,
+            "width": 54.5,
+            "height": 66,
+            "top": 704,
+            "right": 134,
+            "bottom": 770,
+            "left": 79.5
+          },
+          {
+            "label": "选择木椅",
+            "x": 139,
+            "y": 704,
+            "width": 54.5,
+            "height": 66,
+            "top": 704,
+            "right": 193.5,
+            "bottom": 770,
+            "left": 139
+          },
+          {
+            "label": "选择木箱",
+            "x": 198.5,
+            "y": 704,
+            "width": 54.5,
+            "height": 66,
+            "top": 704,
+            "right": 253,
+            "bottom": 770,
+            "left": 198.5
+          },
+          {
+            "label": "选择落地灯",
+            "x": 258,
+            "y": 704,
+            "width": 54.5,
+            "height": 66,
+            "top": 704,
+            "right": 312.5,
+            "bottom": 770,
+            "left": 258
+          },
+          {
+            "label": "选择编织地毯",
+            "x": 317.5,
+            "y": 704,
+            "width": 54.5,
+            "height": 66,
+            "top": 704,
+            "right": 372,
+            "bottom": 770,
+            "left": 317.5
+          },
+          {
+            "label": "旋转部件",
+            "x": 241,
+            "y": 776,
+            "width": 30,
+            "height": 27,
+            "top": 776,
+            "right": 271,
+            "bottom": 803,
+            "left": 241
+          },
+          {
+            "label": "显示网格",
+            "x": 281,
+            "y": 776,
+            "width": 30,
+            "height": 27,
+            "top": 776,
+            "right": 311,
+            "bottom": 803,
+            "left": 281
+          },
+          {
+            "label": "开启音效",
+            "x": 361,
+            "y": 820,
+            "width": 15,
+            "height": 15,
+            "top": 820,
+            "right": 376,
+            "bottom": 835,
+            "left": 361
+          }
+        ]
+      }
+    },
+    {
+      "name": "small-mobile",
+      "gathered": {
+        "wood": 96,
+        "fiber": 24,
+        "harvested": 4,
+        "repeat": false
+      },
+      "crafted": {
+        "wood": 312,
+        "stone": 120,
+        "fiber": 12,
+        "stock": 1,
+        "crafted": 1
+      },
+      "placed": {
+        "block": {
+          "kind": "bed",
+          "x": -1,
+          "z": -1,
+          "rotation": 1.5707963267948966,
+          "hp": 100,
+          "id": 85
+        },
+        "stock": 0,
+        "wood": 312,
+        "fiber": 12,
+        "meshRotation": 1.5707963267948966,
+        "roofsHidden": true
+      },
+      "door": {
+        "error": "这里是门内通道，请留出进出空间",
+        "built": false,
+        "stock": 1,
+        "noFloor": "家具需要放在木地板上"
+      },
+      "packed": {
+        "stock": 1,
+        "bed": false,
+        "wood": 304
+      },
+      "rest": {
+        "comfort": 47,
+        "kinds": [
+          "chair",
+          "rug",
+          "bed",
+          "table",
+          "chest",
+          "lamp"
+        ]
+      },
+      "restored": {
+        "stock": {
+          "bed": 0,
+          "table": 0,
+          "chair": 0,
+          "chest": 0,
+          "lamp": 0,
+          "rug": 0
+        },
+        "fiber": 6,
+        "crafted": 6,
+        "bed": {
+          "kind": "bed",
+          "x": -1,
+          "z": -1,
+          "rotation": 6.265732014659642,
+          "hp": 100,
+          "id": 88
+        }
+      },
+      "visuals": {
+        "colors": 216,
+        "modelPixels": {
+          "chair": 60,
+          "rug": 19,
+          "bed": 62,
+          "table": 150,
+          "chest": 112,
+          "lamp": 80
+        },
+        "overflow": false,
+        "bounds": [
+          {
+            "label": "left-hud",
+            "x": 15,
+            "y": 134,
+            "width": 190,
+            "height": 97,
+            "top": 134,
+            "right": 205,
+            "bottom": 231,
+            "left": 15
+          },
+          {
+            "label": "right-hud",
+            "x": 206,
+            "y": 133,
+            "width": 140,
+            "height": 239,
+            "top": 133,
+            "right": 346,
+            "bottom": 372,
+            "left": 206
+          },
+          {
+            "label": "selection-info",
+            "x": 10,
+            "y": 405,
+            "width": 340,
+            "height": 145,
+            "top": 405,
+            "right": 350,
+            "bottom": 550,
+            "left": 10
+          },
+          {
+            "label": "furniture-recipe",
+            "x": 21,
+            "y": 436,
+            "width": 318,
+            "height": 48,
+            "top": 436,
+            "right": 339,
+            "bottom": 484,
+            "left": 21
+          },
+          {
+            "label": "制作木床",
+            "x": 275,
+            "y": 456,
+            "width": 64,
+            "height": 28,
+            "top": 456,
+            "right": 339,
+            "bottom": 484,
+            "left": 275
+          },
+          {
+            "label": "横向放置",
+            "x": 21,
+            "y": 491,
+            "width": 29,
+            "height": 29,
+            "top": 491,
+            "right": 50,
+            "bottom": 520,
+            "left": 21
+          },
+          {
+            "label": "纵向放置",
+            "x": 53,
+            "y": 491,
+            "width": 29,
+            "height": 29,
+            "top": 491,
+            "right": 82,
+            "bottom": 520,
+            "left": 53
+          },
+          {
+            "label": "转到背面",
+            "x": 85,
+            "y": 491,
+            "width": 29,
+            "height": 29,
+            "top": 491,
+            "right": 114,
+            "bottom": 520,
+            "left": 85
+          },
+          {
+            "label": "旋转角度",
+            "x": 117,
+            "y": 491,
+            "width": 51,
+            "height": 29,
+            "top": 491,
+            "right": 168,
+            "bottom": 520,
+            "left": 117
+          },
+          {
+            "label": "旋转已建部件",
+            "x": 181,
+            "y": 491,
+            "width": 29,
+            "height": 29,
+            "top": 491,
+            "right": 210,
+            "bottom": 520,
+            "left": 181
+          },
+          {
+            "label": "自由旋转",
+            "x": 21,
+            "y": 523,
+            "width": 190,
+            "height": 18,
+            "top": 523,
+            "right": 211,
+            "bottom": 541,
+            "left": 21
+          },
+          {
+            "label": "建造",
+            "x": 64,
+            "y": 672,
+            "width": 30,
+            "height": 27,
+            "top": 672,
+            "right": 94,
+            "bottom": 699,
+            "left": 64
+          },
+          {
+            "label": "采集",
+            "x": 106,
+            "y": 672,
+            "width": 30,
+            "height": 27,
+            "top": 672,
+            "right": 136,
+            "bottom": 699,
+            "left": 106
+          },
+          {
+            "label": "修理",
+            "x": 148,
+            "y": 672,
+            "width": 30,
+            "height": 27,
+            "top": 672,
+            "right": 178,
+            "bottom": 699,
+            "left": 148
+          },
+          {
+            "label": "拆除",
+            "x": 190,
+            "y": 672,
+            "width": 30,
+            "height": 27,
+            "top": 672,
+            "right": 220,
+            "bottom": 699,
+            "left": 190
+          },
+          {
+            "label": "",
+            "x": 18,
+            "y": 566,
+            "width": 59,
+            "height": 27,
+            "top": 566,
+            "right": 77,
+            "bottom": 593,
+            "left": 18
+          },
+          {
+            "label": "",
+            "x": 80,
+            "y": 566,
+            "width": 59,
+            "height": 27,
+            "top": 566,
+            "right": 139,
+            "bottom": 593,
+            "left": 80
+          },
+          {
+            "label": "查看室内",
+            "x": 314,
+            "y": 566,
+            "width": 28,
+            "height": 27,
+            "top": 566,
+            "right": 342,
+            "bottom": 593,
+            "left": 314
+          },
+          {
+            "label": "选择木床",
+            "x": 18,
+            "y": 600,
+            "width": 51.5,
+            "height": 66,
+            "top": 600,
+            "right": 69.5,
+            "bottom": 666,
+            "left": 18
+          },
+          {
+            "label": "选择木桌",
+            "x": 74.5,
+            "y": 600,
+            "width": 49.5,
+            "height": 66,
+            "top": 600,
+            "right": 124,
+            "bottom": 666,
+            "left": 74.5
+          },
+          {
+            "label": "选择木椅",
+            "x": 129,
+            "y": 600,
+            "width": 49.5,
+            "height": 66,
+            "top": 600,
+            "right": 178.5,
+            "bottom": 666,
+            "left": 129
+          },
+          {
+            "label": "选择木箱",
+            "x": 183.5,
+            "y": 600,
+            "width": 49.5,
+            "height": 66,
+            "top": 600,
+            "right": 233,
+            "bottom": 666,
+            "left": 183.5
+          },
+          {
+            "label": "选择落地灯",
+            "x": 238,
+            "y": 600,
+            "width": 49.5,
+            "height": 66,
+            "top": 600,
+            "right": 287.5,
+            "bottom": 666,
+            "left": 238
+          },
+          {
+            "label": "选择编织地毯",
+            "x": 292.5,
+            "y": 600,
+            "width": 49.5,
+            "height": 66,
+            "top": 600,
+            "right": 342,
+            "bottom": 666,
+            "left": 292.5
+          },
+          {
+            "label": "旋转部件",
+            "x": 226,
+            "y": 672,
+            "width": 30,
+            "height": 27,
+            "top": 672,
+            "right": 256,
+            "bottom": 699,
+            "left": 226
+          },
+          {
+            "label": "显示网格",
+            "x": 266,
+            "y": 672,
+            "width": 30,
+            "height": 27,
+            "top": 672,
+            "right": 296,
+            "bottom": 699,
+            "left": 266
+          },
+          {
+            "label": "开启音效",
+            "x": 331,
+            "y": 716,
+            "width": 15,
+            "height": 15,
+            "top": 716,
+            "right": 346,
+            "bottom": 731,
+            "left": 331
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

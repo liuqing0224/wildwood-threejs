@@ -1,0 +1,170 @@
+{
+  "results": [
+    {
+      "name": "desktop",
+      "preview": {
+        "visible": true,
+        "rotation": 1.5707963267948966,
+        "angle": 1.5707963267948966,
+        "cell": {
+          "x": 4,
+          "z": 3
+        }
+      },
+      "placed": {
+        "id": 85,
+        "rotation": 1.5707963267948966,
+        "meshRotation": 1.5707963267948966,
+        "xSize": 0.4950000047683716,
+        "zSize": 2,
+        "wood": 230,
+        "hp": 150,
+        "count": 85
+      },
+      "rotated": {
+        "rotation": 3.141592653589793,
+        "meshRotation": 3.141592653589793,
+        "wood": 230,
+        "hp": 150,
+        "count": 85
+      },
+      "wallBack": {
+        "rotation": 3.9269908169872414,
+        "front": [
+          -0.7071067811865476,
+          0,
+          -0.7071067811865476
+        ]
+      },
+      "fenceRotation": 6.265732014659642,
+      "roof": {
+        "id": 54,
+        "rotation": 1.5707963267948966,
+        "meshRotation": 1.5707963267948966
+      },
+      "visual": {
+        "colors": 202,
+        "outside": [],
+        "overflow": false
+      },
+      "restored": {
+        "wall": 3.141592653589793,
+        "roof": 1.5707963267948966,
+        "next": 1.5707963267948966,
+        "wood": 222,
+        "fence": 6.265732014659642
+      }
+    },
+    {
+      "name": "mobile",
+      "preview": {
+        "visible": true,
+        "rotation": 1.5707963267948966,
+        "angle": 1.5707963267948966,
+        "cell": {
+          "x": 4,
+          "z": 3
+        }
+      },
+      "placed": {
+        "id": 85,
+        "rotation": 1.5707963267948966,
+        "meshRotation": 1.5707963267948966,
+        "xSize": 0.4950000047683716,
+        "zSize": 2,
+        "wood": 230,
+        "hp": 150,
+        "count": 85
+      },
+      "rotated": {
+        "rotation": 3.141592653589793,
+        "meshRotation": 3.141592653589793,
+        "wood": 230,
+        "hp": 150,
+        "count": 85
+      },
+      "wallBack": {
+        "rotation": 3.9269908169872414,
+        "front": [
+          -0.7071067811865476,
+          0,
+          -0.7071067811865476
+        ]
+      },
+      "fenceRotation": 6.265732014659642,
+      "roof": {
+        "id": 54,
+        "rotation": 1.5707963267948966,
+        "meshRotation": 1.5707963267948966
+      },
+      "visual": {
+        "colors": 168,
+        "outside": [],
+        "overflow": false
+      },
+      "restored": {
+        "wall": 3.141592653589793,
+        "roof": 1.5707963267948966,
+        "next": 1.5707963267948966,
+        "wood": 222,
+        "fence": 6.265732014659642
+      }
+    },
+    {
+      "name": "small-mobile",
+      "preview": {
+        "visible": true,
+        "rotation": 1.5707963267948966,
+        "angle": 1.5707963267948966,
+        "cell": {
+          "x": 4,
+          "z": 3
+        }
+      },
+      "placed": {
+        "id": 85,
+        "rotation": 1.5707963267948966,
+        "meshRotation": 1.5707963267948966,
+        "xSize": 0.4950000047683716,
+        "zSize": 2,
+        "wood": 230,
+        "hp": 150,
+        "count": 85
+      },
+      "rotated": {
+        "rotation": 3.141592653589793,
+        "meshRotation": 3.141592653589793,
+        "wood": 230,
+        "hp": 150,
+        "count": 85
+      },
+      "wallBack": {
+        "rotation": 3.9269908169872414,
+        "front": [
+          -0.7071067811865476,
+          0,
+          -0.7071067811865476
+        ]
+      },
+      "fenceRotation": 6.265732014659642,
+      "roof": {
+        "id": 54,
+        "rotation": 1.5707963267948966,
+        "meshRotation": 1.5707963267948966
+      },
+      "visual": {
+        "colors": 155,
+        "outside": [],
+        "overflow": false
+      },
+      "restored": {
+        "wall": 3.141592653589793,
+        "roof": 1.5707963267948966,
+        "next": 1.5707963267948966,
+        "wood": 222,
+        "fence": 6.265732014659642
+      }
+    }
+  ],
+  "errors": []
+}

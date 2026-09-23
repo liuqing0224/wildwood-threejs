@@ -3,12 +3,20 @@
 import { useEffect, useRef, useState } from 'react';
 import {
   Axe,
+  BedDouble,
+  Armchair,
+  Table2,
+  Archive,
+  Lamp,
+  RectangleHorizontal,
+  Layers,
+  Bot,
   Box,
-  ChevronDown,
   CloudRain,
   CloudSun,
   Crosshair,
   Flag,
+  Footprints,
   Grid2X2,
   Hammer,
   Heart,
@@ -27,6 +35,7 @@ import {
   Sun,
   Swords,
   Trees,
+  UserRound,
   Volume2,
   VolumeX,
   Wind,
@@ -38,12 +47,26 @@ import {
 import type { GameEngine } from './game/engine';
 import {
   CATALOG,
+  BUILDINGS,
+  FURNITURE,
+  isFurniture,
+  furnitureRecipeError,
   initialSnapshot,
   type Kind,
   type Snapshot,
   type Mode,
   type Weather,
+  type AgentGoal,
 } from './game/model';
+
+const furnitureIcons = {
+  bed: BedDouble,
+  table: Table2,
+  chair: Armchair,
+  chest: Archive,
+  lamp: Lamp,
+  rug: RectangleHorizontal,
+};
 
 export default function Home() {
   const container = useRef<HTMLDivElement>(null);
@@ -51,6 +74,9 @@ export default function Home() {
   const [state, setState] = useState<Snapshot>(initialSnapshot());
   const [selected, setSelected] = useState<Kind>('wall');
   const [mode, setMode] = useState<Mode>('build');
+  const [category, setCategory] = useState<'buildings' | 'furniture'>(
+    'buildings',
+  );
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
   const [settings, setSettings] = useState(false);
@@ -86,9 +112,10 @@ export default function Home() {
     };
   }, []);
   function choose(kind: Kind) {
+    setCategory(isFurniture(kind) ? 'furniture' : 'buildings');
     setSelected(kind);
     setMode('build');
-    engine.current?.select(kind, 'build');
+    engine.current?.select(kind, 'build', true);
   }
   function tool(next: Mode) {
     setMode(next);
@@ -96,9 +123,31 @@ export default function Home() {
   }
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
-      if ((event.target as HTMLElement)?.tagName === 'INPUT') return;
-      const kind = (Object.keys(CATALOG) as Kind[])[Number(event.key) - 1];
+      if (
+        (event.target as HTMLElement)?.closest(
+          'input, textarea, select, [contenteditable="true"]',
+        ) ||
+        event.repeat ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.altKey
+      )
+        return;
+      const kind = (Object.keys(BUILDINGS) as Kind[])[Number(event.key) - 1];
       if (kind) choose(kind);
+      if (event.code === 'KeyQ') {
+        event.preventDefault();
+        tool('rotate');
+        return;
+      }
+      const modes: Record<string, Mode> = {
+        b: 'build',
+        v: 'harvest',
+        c: 'repair',
+        m: 'walk',
+        q: 'rotate',
+      };
+      if (modes[event.key.toLowerCase()]) tool(modes[event.key.toLowerCase()]);
       if (event.key.toLowerCase() === 'g')
         setGrid((current) => {
           engine.current?.toggleGrid(!current);
@@ -107,15 +156,24 @@ export default function Home() {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, []);
+  }, [selected]);
   const item = CATALOG[selected];
+  const furnishing = isFurniture(selected);
+  const recipeError = furnishing ? furnitureRecipeError(state, selected) : null;
   const hours = Math.floor(state.hour).toString().padStart(2, '0');
   const mins = (Math.floor(((state.hour % 1) * 60) / 5) * 5)
     .toString()
     .padStart(2, '0');
   const night = state.hour < 6 || state.hour >= 19;
+  const activeRotation =
+    mode === 'rotate' ? state.editRotation : state.buildRotation;
+  const rotationDegrees =
+    (Math.round(((activeRotation ?? 0) * 2) / Math.PI) * 90) % 360;
+  const rotationDisabled = mode === 'rotate' && activeRotation === null;
   return (
-    <main className="game-shell">
+    <main
+      className={`game-shell ${category === 'furniture' ? 'furnishing' : ''}`}
+    >
       <div
         ref={container}
         className="world"
@@ -190,13 +248,91 @@ export default function Home() {
         </div>
       </header>
       <aside className="left-hud">
-        <div className="location">
-          <span className="location-line" />
-          <div>
-            <small>你的第一片天地</small>
+        <div className="resident-card">
+          <button
+            className="resident-portrait"
+            aria-label="看看阿木"
+            title="看看阿木"
+            onClick={() => {
+              tool('walk');
+              engine.current?.focusResident();
+            }}
+          >
+            <UserRound size={23} />
+          </button>
+          <div className="resident-identity">
+            <small>松风谷地 · 小屋主人</small>
             <h2>
-              松风谷地 <ChevronDown size={15} />
+              阿木 <span>{state.residentActivity}</span>
             </h2>
+          </div>
+          <button
+            className={`resident-walk ${mode === 'walk' ? 'selected' : ''}`}
+            title="散步：点击营地前往"
+            aria-label="带阿木散步"
+            aria-pressed={mode === 'walk'}
+            onClick={() => tool('walk')}
+          >
+            <Footprints size={18} />
+          </button>
+          <p>{state.residentMood}</p>
+          <div className="agent-controls">
+            <button
+              className={`resident-walk ${state.agentEnabled ? 'selected' : ''}`}
+              title="自动托管（T）"
+              aria-label="自动托管"
+              aria-pressed={state.agentEnabled}
+              onClick={() => engine.current?.setAgent(!state.agentEnabled)}
+            >
+              <Bot size={18} />
+            </button>
+            <select
+              aria-label="自动任务目标"
+              value={state.agentGoal}
+              onChange={(event) =>
+                engine.current?.setAgent(true, event.target.value as AgentGoal)
+              }
+            >
+              <option value="develop">发展家园</option>
+              <option value="harvest">持续采集</option>
+              <option value="repair">维修巡查</option>
+            </select>
+            <button
+              className="resident-walk"
+              title="回屋避险（H）"
+              aria-label="回屋避险"
+              onClick={() => engine.current?.seekShelter()}
+            >
+              <House size={17} />
+            </button>
+          </div>
+          <div className="resident-condition">
+            <span>
+              {state.defending
+                ? '屋内防御'
+                : state.sheltered
+                  ? '屋内安全'
+                  : '户外'}{' '}
+              · 舒适 {Math.round(state.comfort)}
+            </span>
+            <progress aria-label="阿木舒适度" value={state.comfort} max={100} />
+          </div>
+          <div className="resident-actions">
+            <button
+              title="就近操作（E）"
+              aria-label="就近操作"
+              onClick={() => engine.current?.interactNearby()}
+            >
+              <Hammer size={15} />
+            </button>
+            <button
+              title="攻击附近怪物（F）"
+              aria-label="攻击附近怪物"
+              onClick={() => engine.current?.attackNearby()}
+            >
+              <Swords size={15} />
+            </button>
+            <span>{state.agentEnabled ? '自动托管中' : '手动控制'}</span>
           </div>
         </div>
         <section className="objectives">
@@ -302,6 +438,11 @@ export default function Home() {
             </span>
             <Leaf size={14} />
             <small>{state.weather === 'storm' ? '强风' : '微风'}</small>
+          </div>
+          <div className="weather-cycle">
+            {state.autoWeather
+              ? `天气变化 · 约 ${Math.ceil(state.weatherRemaining)} 秒`
+              : '天气已锁定'}
           </div>
         </section>
         <div className="view-tools">
@@ -411,29 +552,134 @@ export default function Home() {
         <div className="selection-info">
           <span className="mode-dot" />
           <strong>
-            {mode === 'build'
-              ? item.name
-              : mode === 'harvest'
-                ? '采集材料'
-                : mode === 'repair'
-                  ? '修理建筑'
-                  : '拆除建筑'}
+            {mode === 'walk'
+              ? '阿木的林间漫步'
+              : mode === 'build'
+                ? item.name
+                : mode === 'harvest'
+                  ? '采集材料'
+                  : mode === 'repair'
+                    ? '修理建筑'
+                    : mode === 'rotate'
+                      ? state.rotatingName || '未选中部件'
+                      : '拆除建筑'}
           </strong>
           <span>
-            {mode === 'build'
-              ? item.description
-              : mode === 'harvest'
-                ? '树木 +24 木材 · 岩石 +18 石料'
-                : mode === 'repair'
-                  ? '每次消耗 4 木材，恢复 45 耐久'
-                  : '返还一半材料'}
+            {mode === 'walk'
+              ? state.residentMood
+              : mode === 'build'
+                ? item.description
+                : mode === 'harvest'
+                  ? '树木 +24 木材 / 6 纤维 · 岩石 +18 石料'
+                  : mode === 'repair'
+                    ? '每次消耗 4 木材，恢复 45 耐久'
+                    : mode === 'rotate'
+                      ? '不消耗材料'
+                      : '建筑返还材料 · 家具收回成品'}
           </span>
-          {mode === 'build' && (
+          {mode === 'build' && !furnishing && (
             <em>
               <Trees size={13} />
               {item.wood} <Box size={13} />
               {item.stone}
             </em>
+          )}
+          {mode === 'build' && furnishing && (
+            <div className="furniture-recipe">
+              <div className="recipe-materials" aria-label="家具配方">
+                {(['wood', 'stone', 'fiber'] as const)
+                  .filter((key) => FURNITURE[selected][key] > 0)
+                  .map((key) => {
+                    const Icon =
+                      key === 'wood' ? Trees : key === 'stone' ? Box : Leaf;
+                    const label =
+                      key === 'wood'
+                        ? '木材'
+                        : key === 'stone'
+                          ? '石料'
+                          : '纤维';
+                    return (
+                      <span
+                        key={key}
+                        className={
+                          state[key] < FURNITURE[selected][key]
+                            ? 'shortage'
+                            : ''
+                        }
+                        title={`${label}：持有 / 需要`}
+                      >
+                        <Icon size={12} />
+                        {label} {state[key]}/{FURNITURE[selected][key]}
+                      </span>
+                    );
+                  })}
+              </div>
+              <div className="recipe-actions">
+                <small>
+                  {recipeError || '材料齐备'} · 成品{' '}
+                  {state.furnitureStock[selected]}
+                </small>
+                <button
+                  aria-label={`制作${item.name}`}
+                  title={recipeError || `制作${item.name}`}
+                  disabled={
+                    !!recipeError ||
+                    state.paused ||
+                    state.health <= 0 ||
+                    state.furnitureStock[selected] >= 999
+                  }
+                  onClick={() => engine.current?.craft(selected)}
+                >
+                  <Hammer size={14} />
+                  制作
+                </button>
+              </div>
+            </div>
+          )}
+          {(mode === 'build' || mode === 'rotate') && (
+            <div
+              className="orientation-tools"
+              role="group"
+              aria-label="建筑方向"
+            >
+              <button
+                aria-label="向左旋转 90 度"
+                disabled={rotationDisabled}
+                title="向左旋转 90°"
+                onClick={() => engine.current?.rotateByQuarter(-1)}
+              >
+                <RotateCcw size={17} />
+              </button>
+              <button
+                className="rotation-step"
+                aria-label="当前方向，点击向右旋转 90 度"
+                title="点击右转 · 滚轮切换方向"
+                disabled={rotationDisabled}
+                onClick={() => engine.current?.rotateByQuarter(1)}
+                onWheel={(event) => {
+                  event.preventDefault();
+                  engine.current?.rotateByQuarter(event.deltaY < 0 ? -1 : 1);
+                }}
+              >
+                {rotationDisabled ? '先点击部件' : `${rotationDegrees}°`}
+              </button>
+              <button
+                aria-label="向右旋转 90 度"
+                disabled={rotationDisabled}
+                title="向右旋转 90°"
+                onClick={() => engine.current?.rotateByQuarter(1)}
+              >
+                <RotateCw size={17} />
+              </button>
+              <button
+                aria-label={mode === 'rotate' ? '返回建造' : '旋转已建部件'}
+                aria-pressed={mode === 'rotate'}
+                title="旋转已建部件（Q）：点击右转，Shift 点击左转"
+                onClick={() => tool(mode === 'rotate' ? 'build' : 'rotate')}
+              >
+                {mode === 'rotate' ? <Hammer size={17} /> : <RotateCw size={17} />}
+              </button>
+            </div>
           )}
         </div>
         <div className="build-dock">
@@ -472,24 +718,88 @@ export default function Home() {
             </button>
           </div>
           <span className="dock-divider" />
-          <div className="catalog">
-            {(Object.keys(CATALOG) as Kind[]).map((kind, index) => (
+          <div className="catalog-section">
+            <div className="catalog-tabs">
+              <div role="tablist" aria-label="制作分类">
+                <button
+                  role="tab"
+                  aria-selected={category === 'buildings'}
+                  onClick={() => {
+                    choose('wall');
+                    engine.current?.setInteriorView(false);
+                  }}
+                >
+                  <House size={14} />
+                  建筑
+                </button>
+                <button
+                  role="tab"
+                  aria-selected={category === 'furniture'}
+                  onClick={() => {
+                    choose('bed');
+                    engine.current?.setInteriorView(true);
+                  }}
+                >
+                  <Armchair size={14} />
+                  家具
+                </button>
+              </div>
+              <span className="fiber-stock" title="采集树木获得纤维">
+                <Leaf size={12} />
+                纤维 {state.fiber}
+              </span>
               <button
-                key={kind}
-                className={`catalog-item ${selected === kind && mode === 'build' ? 'chosen' : ''}`}
-                onClick={() => choose(kind)}
-                title={`${CATALOG[kind].name} · ${CATALOG[kind].wood} 木材 / ${CATALOG[kind].stone} 石料`}
-                aria-label={`选择${CATALOG[kind].name}`}
+                className="interior-button"
+                title="查看室内"
+                aria-label="查看室内"
+                aria-pressed={state.interiorView}
+                onClick={() =>
+                  engine.current?.setInteriorView(!state.interiorView)
+                }
               >
-                <kbd>{index + 1}</kbd>
-                <div className={`miniature ${kind}`}>
-                  <i />
-                  <b />
-                  <span />
-                </div>
-                <span>{CATALOG[kind].name}</span>
+                <Layers size={16} />
               </button>
-            ))}
+            </div>
+            <div className="catalog">
+              {(
+                Object.keys(
+                  category === 'buildings' ? BUILDINGS : FURNITURE,
+                ) as Kind[]
+              ).map((kind, index) => {
+                const Icon = isFurniture(kind) ? furnitureIcons[kind] : null;
+                return (
+                  <button
+                    key={kind}
+                    className={`catalog-item ${selected === kind && mode === 'build' ? 'chosen' : ''}`}
+                    onClick={() => choose(kind)}
+                    title={`${CATALOG[kind].name} · ${CATALOG[kind].wood} 木材 / ${CATALOG[kind].stone} 石料${isFurniture(kind) ? ` / ${FURNITURE[kind].fiber} 纤维` : ''}`}
+                    aria-label={`选择${CATALOG[kind].name}`}
+                  >
+                    {isFurniture(kind) ? (
+                      <small className="stock-count">
+                        {state.furnitureStock[kind]}
+                      </small>
+                    ) : (
+                      <kbd>{index + 1}</kbd>
+                    )}
+                    {Icon ? (
+                      <Icon
+                        className="furniture-icon"
+                        size={31}
+                        strokeWidth={1.5}
+                      />
+                    ) : (
+                      <div className={`miniature ${kind}`}>
+                        <i />
+                        <b />
+                        <span />
+                      </div>
+                    )}
+                    <span>{CATALOG[kind].name}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
           <span className="dock-divider extra" />
           <div className="dock-extras">

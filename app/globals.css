@@ -194,6 +194,152 @@ button svg {
   gap: 12px;
   margin-bottom: 30px;
 }
+.resident-card {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 30px;
+  align-items: center;
+  gap: 5px 9px;
+  margin-bottom: 19px;
+  padding: 10px;
+  background: #f7fbefeb;
+  border: 1px solid #ffffffaa;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+.resident-portrait {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: #dbe9d6;
+  color: #477362;
+  border-radius: 50%;
+  border: 2px solid #fff9;
+}
+.resident-identity small {
+  font-size: 8px;
+  color: #849078;
+  display: block;
+}
+.resident-identity h2 {
+  font-size: 17px;
+  margin: 4px 0 0;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.resident-identity h2 span {
+  font-size: 8px;
+  font-weight: 400;
+  color: #72846a;
+  line-height: 1.3;
+}
+.resident-walk {
+  width: 29px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  color: #72856a;
+}
+.resident-walk.selected {
+  background: #dce8d5;
+  color: #366c47;
+}
+.resident-card p {
+  grid-column: 2 / 4;
+  font-size: 9px;
+  color: #6e8064;
+  margin: 0;
+  line-height: 1.5;
+}
+.agent-controls {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 29px minmax(0, 1fr) 29px;
+  align-items: center;
+  gap: 5px;
+  border-top: 1px solid #b8c9b8;
+  padding-top: 6px;
+}
+.agent-controls select {
+  min-width: 0;
+  width: 100%;
+  font: inherit;
+  font-size: 11px;
+  color: #385e58;
+  background: #f6faf6;
+  border: 1px solid #bdcdc5;
+  border-radius: 4px;
+  height: 29px;
+  padding: 0 4px;
+}
+.resident-condition,
+.resident-actions {
+  grid-column: 1 / -1;
+  font-size: 10px;
+  color: #536c68;
+}
+.resident-condition progress {
+  display: block;
+  width: 100%;
+  height: 4px;
+  accent-color: #398579;
+  margin-top: 5px;
+}
+.resident-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.resident-actions button {
+  width: 30px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  background: #e0eae4;
+  border-radius: 4px;
+}
+.resident-actions span {
+  margin-left: auto;
+}
+.weather-cycle {
+  font-size: 9px;
+  color: #687d73;
+  padding-top: 6px;
+}
+@media (max-width: 760px) {
+  .resident-card {
+    grid-template-columns: 31px minmax(0, 1fr) 26px;
+    gap: 4px 6px;
+    padding: 8px;
+    margin-bottom: 9px;
+  }
+  .resident-portrait {
+    width: 30px;
+    height: 30px;
+  }
+  .resident-portrait svg {
+    width: 18px;
+  }
+  .resident-identity small {
+    font-size: 7px;
+  }
+  .resident-identity h2 {
+    font-size: 14px;
+    gap: 4px;
+  }
+  .resident-identity h2 span {
+    font-size: 7px;
+  }
+  .resident-card p {
+    font-size: 8px;
+  }
+  .resident-walk {
+    width: 25px;
+  }
+}
 .location-line {
   width: 3px;
   height: 32px;
@@ -313,6 +459,14 @@ button svg {
   right: 32px;
   top: 136px;
   width: 206px;
+}
+.left-hud,
+.right-hud {
+  pointer-events: none;
+}
+.left-hud > *,
+.right-hud > * {
+  pointer-events: auto;
 }
 .clock-widget {
   background: #fafcf1e8;
@@ -441,6 +595,9 @@ button svg {
 .bottom-hud > * {
   pointer-events: auto;
 }
+.bottom-hud > .toast {
+  pointer-events: none;
+}
 .selection-info {
   display: flex;
   align-items: center;
@@ -452,6 +609,47 @@ button svg {
   margin-bottom: 12px;
   box-shadow: 0 4px 15px #173a2010;
   max-width: 100%;
+  flex-wrap: wrap;
+}
+.orientation-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px;
+  width: auto;
+  flex-shrink: 0;
+}
+.orientation-tools button {
+  width: 29px;
+  height: 29px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  color: #5c7778;
+  background: #edf3f1;
+}
+.orientation-tools button[aria-pressed='true'] {
+  color: #176979;
+  background: #d7eced;
+}
+.orientation-tools .rotation-step {
+  display: grid;
+  place-items: center;
+  min-width: 58px;
+  width: auto;
+  height: 29px;
+  padding: 0 7px;
+  text-align: center;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  color: #45696c;
+  background: #fff;
+  border: 1px solid #bfcece;
+  border-radius: 4px;
+}
+.orientation-tools :disabled {
+  opacity: 0.45;
+  cursor: default;
 }
 .mode-dot {
   width: 6px;
@@ -516,6 +714,107 @@ button svg {
 .catalog {
   display: flex;
   gap: 7px;
+}
+.catalog-section {
+  min-width: 0;
+}
+.catalog-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+.catalog-tabs [role='tablist'] {
+  display: flex;
+  gap: 3px;
+}
+.catalog-tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 27px;
+  padding: 0 9px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #587078;
+}
+.catalog-tabs button[aria-selected='true'],
+.catalog-tabs button[aria-pressed='true'] {
+  background: #d9e9e8;
+  color: #28656f;
+}
+.fiber-stock {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  font-size: 10px;
+  color: #607858;
+  white-space: nowrap;
+}
+.catalog-tabs .interior-button {
+  width: 28px;
+  padding: 0;
+}
+.furniture-icon {
+  color: #80745f;
+  margin: auto 0 5px;
+}
+.catalog-item .stock-count {
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  color: #476b73;
+  font-size: 10px;
+}
+.furniture-recipe {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.recipe-materials {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.recipe-materials span {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  color: #55736b;
+}
+.recipe-materials .shortage {
+  color: #a34443;
+}
+.recipe-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.recipe-actions small {
+  font-size: 10px;
+  color: #637271;
+}
+.recipe-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 28px;
+  min-width: 64px;
+  padding: 0 9px;
+  border-radius: 4px;
+  background: #397b7f;
+  color: white;
+  font-size: 11px;
+}
+.recipe-actions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 .catalog-item {
   position: relative;
@@ -1045,6 +1344,43 @@ footer button {
     order: 1;
     width: 100%;
     gap: 5px;
+  }
+  .catalog-section {
+    order: 1;
+    width: 100%;
+  }
+  .furnishing .resident-card > p,
+  .furnishing .agent-controls,
+  .furnishing .resident-condition,
+  .furnishing .resident-actions {
+    display: none;
+  }
+  .furnishing .clock-widget {
+    padding: 8px;
+  }
+  .furnishing .day-label,
+  .furnishing .day-track,
+  .furnishing .weather-cycle {
+    display: none;
+  }
+  .furnishing .clock-main {
+    margin: 0 0 4px;
+  }
+  .furnishing .weather-line {
+    padding-top: 5px;
+  }
+  .furnishing .view-tools {
+    margin-top: 8px;
+  }
+  .furnishing .raid-status {
+    padding: 6px 8px;
+    margin-top: 8px;
+  }
+  .furnishing .raid-status p {
+    display: none;
+  }
+  .furniture-recipe {
+    width: 100%;
   }
   .catalog-item {
     width: auto;

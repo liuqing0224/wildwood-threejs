@@ -1,0 +1,77 @@
+{
+  "results": [
+    {
+      "name": "character-desktop",
+      "walking": {
+        "position": [
+          0,
+          0.03825503713618029,
+          9.920000000000002
+        ],
+        "speech": "好，去那边看看。"
+      },
+      "work": {
+        "built": 1,
+        "tool": true,
+        "armMoves": true,
+        "route": 0
+      },
+      "canvas": {
+        "colors": 191,
+        "position": {
+          "x": 719.9999999999999,
+          "y": 466.21246184513234
+        },
+        "overflow": false,
+        "buttonsOutside": 0
+      },
+      "paused": true,
+      "restored": {
+        "x": 6,
+        "z": 6
+      },
+      "oldSave": {
+        "wood": 230,
+        "built": 1,
+        "mood": "今天也想把家盖好"
+      }
+    },
+    {
+      "name": "character-mobile",
+      "walking": {
+        "position": [
+          0,
+          0.03825503713618029,
+          9.920000000000002
+        ],
+        "speech": "好，去那边看看。"
+      },
+      "work": {
+        "built": 1,
+        "tool": true,
+        "armMoves": true,
+        "route": 0
+      },
+      "canvas": {
+        "colors": 145,
+        "position": {
+          "x": 194.99999999999991,
+          "y": 408.49159874514686
+        },
+        "overflow": false,
+        "buttonsOutside": 0
+      },
+      "paused": true,
+      "restored": {
+        "x": 6,
+        "z": 6
+      },
+      "oldSave": {
+        "wood": 230,
+        "built": 1,
+        "mood": "今天也想把家盖好"
+      }
+    }
+  ],
+  "errors": []
+}

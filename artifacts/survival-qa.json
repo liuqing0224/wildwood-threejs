@@ -1,0 +1,278 @@
+{
+  "results": [
+    {
+      "name": "desktop",
+      "keyboard": {
+        "x": 4.473834785544291,
+        "z": 5.289565394920617,
+        "auto": false,
+        "stopped": true
+      },
+      "collision": -2.640000000000003,
+      "repair": {
+        "health": 90,
+        "wood": 236
+      },
+      "development": {
+        "built": 3,
+        "harvested": 3,
+        "wood": 240,
+        "stone": 108,
+        "status": "屋内休息",
+        "task": null,
+        "route": [],
+        "position": {
+          "x": 0,
+          "z": 1
+        }
+      },
+      "shelter": {
+        "sheltered": true,
+        "defending": true,
+        "comfort": 100,
+        "position": {
+          "x": 0,
+          "z": 1
+        },
+        "roofHidden": true,
+        "doorAngle": -4.283863810258165e-156,
+        "noHarvestInStorm": true,
+        "umbrellaVisible": false
+      },
+      "defense": {
+        "damage": 9,
+        "enemyHp": 78
+      },
+      "resumed": {
+        "harvested": 10,
+        "status": "前往任务地点"
+      },
+      "pixels": 154,
+      "layout": {
+        "overflow": false,
+        "elements": [
+          {
+            "x": 34,
+            "y": 136,
+            "right": 280,
+            "bottom": 322.5
+          },
+          {
+            "x": 1202,
+            "y": 136,
+            "right": 1408,
+            "bottom": 511.5
+          },
+          {
+            "x": 379,
+            "y": 814,
+            "right": 1061,
+            "bottom": 917
+          }
+        ]
+      },
+      "roofLoss": {
+        "sheltered": false,
+        "comfort": 92.00000000000045,
+        "status": "无可达安全屋 · 需要完整墙顶和入口"
+      },
+      "blockedEntry": {
+        "blocked": true,
+        "recovered": true
+      },
+      "random": {
+        "changed": true,
+        "duration": 86.18336461116769,
+        "dayAdvanced": true,
+        "daySeconds": 355.9981513770912
+      },
+      "persisted": {
+        "enabled": true,
+        "goal": "repair"
+      }
+    },
+    {
+      "name": "mobile",
+      "keyboard": {
+        "x": 4.624406253763787,
+        "z": 5.267607557089178,
+        "auto": false,
+        "stopped": true
+      },
+      "collision": -2.640000000000003,
+      "repair": {
+        "health": 90,
+        "wood": 236
+      },
+      "development": {
+        "built": 3,
+        "harvested": 3,
+        "wood": 270,
+        "stone": 108,
+        "status": "屋内休息",
+        "task": null,
+        "route": [],
+        "position": {
+          "x": 0,
+          "z": 1
+        }
+      },
+      "shelter": {
+        "sheltered": true,
+        "defending": true,
+        "comfort": 100,
+        "position": {
+          "x": 0,
+          "z": 1
+        },
+        "roofHidden": true,
+        "doorAngle": -4.283863810258165e-156,
+        "noHarvestInStorm": true,
+        "umbrellaVisible": false
+      },
+      "defense": {
+        "damage": 9,
+        "enemyHp": 78
+      },
+      "resumed": {
+        "harvested": 10,
+        "status": "前往任务地点"
+      },
+      "pixels": 151,
+      "layout": {
+        "overflow": false,
+        "elements": [
+          {
+            "x": 15,
+            "y": 134,
+            "right": 205,
+            "bottom": 303
+          },
+          {
+            "x": 236,
+            "y": 133,
+            "right": 376,
+            "bottom": 440.5
+          },
+          {
+            "x": 10,
+            "y": 696,
+            "right": 380,
+            "bottom": 811
+          }
+        ]
+      },
+      "roofLoss": {
+        "sheltered": false,
+        "comfort": 92.00000000000045,
+        "status": "无可达安全屋 · 需要完整墙顶和入口"
+      },
+      "blockedEntry": {
+        "blocked": true,
+        "recovered": true
+      },
+      "random": {
+        "changed": true,
+        "duration": 85.82529406429529,
+        "dayAdvanced": true,
+        "daySeconds": 250.5442511462632
+      },
+      "persisted": {
+        "enabled": true,
+        "goal": "repair"
+      }
+    },
+    {
+      "name": "small-mobile",
+      "keyboard": {
+        "x": 4.624406253763787,
+        "z": 5.267607557089178,
+        "auto": false,
+        "stopped": true
+      },
+      "collision": -2.640000000000003,
+      "repair": {
+        "health": 90,
+        "wood": 236
+      },
+      "development": {
+        "built": 3,
+        "harvested": 3,
+        "wood": 270,
+        "stone": 108,
+        "status": "屋内休息",
+        "task": null,
+        "route": [],
+        "position": {
+          "x": 0,
+          "z": 1
+        }
+      },
+      "shelter": {
+        "sheltered": true,
+        "defending": true,
+        "comfort": 100,
+        "position": {
+          "x": 0,
+          "z": 1
+        },
+        "roofHidden": true,
+        "doorAngle": -4.283863810258165e-156,
+        "noHarvestInStorm": true,
+        "umbrellaVisible": false
+      },
+      "defense": {
+        "damage": 9,
+        "enemyHp": 78
+      },
+      "resumed": {
+        "harvested": 10,
+        "status": "前往任务地点"
+      },
+      "pixels": 133,
+      "layout": {
+        "overflow": false,
+        "elements": [
+          {
+            "x": 15,
+            "y": 134,
+            "right": 205,
+            "bottom": 303
+          },
+          {
+            "x": 206,
+            "y": 133,
+            "right": 346,
+            "bottom": 440.5
+          },
+          {
+            "x": 10,
+            "y": 592,
+            "right": 350,
+            "bottom": 707
+          }
+        ]
+      },
+      "roofLoss": {
+        "sheltered": false,
+        "comfort": 92.00000000000045,
+        "status": "无可达安全屋 · 需要完整墙顶和入口"
+      },
+      "blockedEntry": {
+        "blocked": true,
+        "recovered": true
+      },
+      "random": {
+        "changed": true,
+        "duration": 98.9271536509181,
+        "dayAdvanced": true,
+        "daySeconds": 317.23947168503264
+      },
+      "persisted": {
+        "enabled": true,
+        "goal": "repair"
+      }
+    }
+  ],
+  "errors": []
+}
